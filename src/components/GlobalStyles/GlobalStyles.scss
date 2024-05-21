@@ -1,0 +1,37 @@
+// Import normalize.css to reset CSS
+@import 'normalize.css';
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+:root {
+  // Colors
+  // --primary: ;
+  // --secondary: ;
+  --black: #000;
+  --white: #fff;
+
+  // Font family
+  --font-family: 'Nunito Sans', sans-serif;
+}
+
+// CSS reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Setting the font size
+html {
+  font-size: 62.5%;
+}
+
+// Common properties
+body {
+  font-family: var(--font-family);
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-rendering: optimizespeed;
+  color: var(--black);
+  overflow-y: overlay;
+}
