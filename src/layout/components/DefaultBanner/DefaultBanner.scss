@@ -1,0 +1,19 @@
+.default-banner {
+  padding-top: 45%;
+  background: url('../../../assets/images/default-banner.jpg') no-repeat top center / contain;
+  position: relative;
+
+  &__content {
+    position: absolute;
+    inset: 0;
+    text-align: center;
+    display: grid;
+
+    &--heading {
+      text-transform: uppercase;
+      font-size: 9.6rem;
+      color: var(--white);
+      place-self: center;
+    }
+  }
+}

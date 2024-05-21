@@ -1,12 +1,16 @@
-import CustomHeader from '../components/CustomHeader';
-import DefaultHeader from '../components/DefaultHeader';
+import CustomBanner from '../components/CustomBanner';
+import DefaultBanner from '../components/DefaultBanner';
+import Header from '../components/Header';
 import './DefaultLayout.scss';
 
-function DefaultLayout({ header, children }) {
+function DefaultLayout({ banner, children }) {
   return (
-    <div>
-      {header ? <CustomHeader /> : <DefaultHeader />}
-      <div>{children}</div>
+    <div className='app'>
+      <Header />
+      <div>
+        {banner ? <CustomBanner /> : <DefaultBanner />}
+        {children}
+      </div>
     </div>
   );
 }

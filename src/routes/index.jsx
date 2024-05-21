@@ -5,7 +5,7 @@ import SellRegister from '../pages/SellRegister';
 // Public routes
 const publicRoutes = [
   { path: '/agent', component: Agent },
-  { path: '/sell', component: Sell, header: true, children: [{ path: 'register', component: SellRegister }] },
+  { path: '/sell', component: Sell, customBanner: true, children: [{ path: 'register', component: SellRegister }] },
 ];
 
 // Private routes

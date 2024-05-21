@@ -12,6 +12,13 @@
 
   // Font family
   --font-family: 'Nunito Sans', sans-serif;
+
+  // Screen size
+  --scree-size: 1920px;
+  // Screen gutter
+  --screen-gutter: 62px;
+  //
+  --header-height: 140px;
 }
 
 // CSS reset
@@ -34,4 +41,9 @@ body {
   text-rendering: optimizespeed;
   color: var(--black);
   overflow-y: overlay;
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
 }

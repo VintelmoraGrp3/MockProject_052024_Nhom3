@@ -1,0 +1,45 @@
+.header {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  max-width: var(--scree-size);
+  width: 100%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding-right: var(--screen-gutter);
+  padding-left: var(--screen-gutter);
+  z-index: 1000;
+
+  &__wrapper {
+    display: flex;
+  }
+
+  // Logo
+  &__logo {
+    font-size: 4.8rem;
+    font-weight: 700;
+  }
+
+  // Navigation
+  &__nav {
+    &--left &--item {
+      margin-left: 150px;
+    }
+
+    &--right &--item {
+      margin-right: 150px;
+    }
+
+    &--item {
+      display: inline-block;
+      color: var(--white);
+      font-size: 4.8rem;
+      font-weight: 400;
+      text-transform: capitalize;
+    }
+  }
+}
