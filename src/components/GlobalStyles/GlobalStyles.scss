@@ -5,20 +5,40 @@
 
 :root {
   // Colors
-  // --primary: ;
+  --primary: #3f78e5;
   // --secondary: ;
   --black: #000;
   --white: #fff;
 
-  // Font family
-  --font-family: 'Nunito Sans', sans-serif;
+  --gray-100: #d9d9d9;
 
-  // Screen size
+  // Common
+  --font-family: 'Nunito Sans', sans-serif;
   --scree-size: 1920px;
-  // Screen gutter
-  --screen-gutter: 62px;
-  //
+  --screen-gutter: 8px;
+
+  // Header
   --header-height: 140px;
+
+  @media screen and (min-width: 640px) {
+    --screen-gutter: 16px;
+  }
+
+  @media screen and (min-width: 768px) {
+    --screen-gutter: 24px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    --screen-gutter: 50px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    --screen-gutter: 58px;
+  }
+
+  @media screen and (min-width: 1536px) {
+    --screen-gutter: 62px;
+  }
 }
 
 // CSS reset
@@ -43,7 +63,12 @@ body {
   overflow-y: overlay;
 }
 
-a {
+button,
+input,
+[tabindex] {
+  outline: none;
+  border: none;
+}
+a[href] {
   text-decoration: none;
-  color: var(--white);
 }
