@@ -5,11 +5,13 @@ import Button from '../../../components/Button';
 import { PiListBold } from 'react-icons/pi';
 import { CgClose } from 'react-icons/cg';
 import { useState } from 'react';
-import { MENU_ITEMS_LEFT, MENU_ITEMS_RIGHT } from './constants';
+import { LOGIN, MENU_ITEMS_LEFT, MENU_ITEMS_RIGHT } from './constants';
 
 function Header() {
   // The state is used to toggle the nav list for mobile.
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  // User login status
+  let currentUser = false;
 
   // The function to toggle the nav list for mobile
   const toggleMenu = () => {
@@ -51,10 +53,20 @@ function Header() {
             ))}
           </nav>
         </div>
-        {/* Profile */}
-        <div className='header__nav--profile'>
-          <img src={user} alt='user' />
-        </div>
+
+        {/* Check user login */}
+        {currentUser ? (
+          // Login
+          <Button key={LOGIN.title} to={LOGIN.href} className='header--login'>
+            {LOGIN.title}
+          </Button>
+        ) : (
+          // Profile
+          <div className='header__nav--profile'>
+            <img src={user} alt='user' />
+          </div>
+        )}
+
         {/* Used to open the nav list for mobile. */}
         <div className='js-header--mobile-list header__nav--mobile-icon' onClick={toggleMenu}>
           <PiListBold />

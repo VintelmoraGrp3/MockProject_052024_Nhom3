@@ -29,8 +29,8 @@
     text-align: center;
     display: grid;
     z-index: 2;
-    padding-right: var(--screen-gutter);
-    padding-left: var(--screen-gutter);
+    padding-right: var(--screen-spacer);
+    padding-left: var(--screen-spacer);
 
     &--heading {
       text-transform: uppercase;

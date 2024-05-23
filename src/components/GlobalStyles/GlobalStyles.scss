@@ -15,29 +15,29 @@
   // Common
   --font-family: 'Nunito Sans', sans-serif;
   --scree-size: 1920px;
-  --screen-gutter: 8px;
+  --screen-spacer: 8px;
 
   // Header
   --header-height: 140px;
 
   @media screen and (min-width: 640px) {
-    --screen-gutter: 16px;
+    --screen-spacer: 16px;
   }
 
   @media screen and (min-width: 768px) {
-    --screen-gutter: 24px;
+    --screen-spacer: 24px;
   }
 
   @media screen and (min-width: 1024px) {
-    --screen-gutter: 50px;
+    --screen-spacer: 50px;
   }
 
   @media screen and (min-width: 1280px) {
-    --screen-gutter: 58px;
+    --screen-spacer: 58px;
   }
 
   @media screen and (min-width: 1536px) {
-    --screen-gutter: 62px;
+    --screen-spacer: 62px;
   }
 }
 
