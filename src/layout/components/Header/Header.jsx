@@ -4,12 +4,14 @@ import user from '../../../assets/images/user-circle.svg';
 import Button from '../../../components/Button';
 import { PiListBold } from 'react-icons/pi';
 import { CgClose } from 'react-icons/cg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { LOGIN, MENU_ITEMS_LEFT, MENU_ITEMS_RIGHT } from './constants';
 
 function Header() {
   // The state is used to toggle the nav list for mobile.
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  // State to handle header background color change
+  const [isScrolled, setIsScrolled] = useState(false);
   // User login status
   let currentUser = false;
 
@@ -18,8 +20,20 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  // Function to handle scroll event
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <div className='header'>
+    <div className={`header ${isScrolled && 'header--scrolled'}`}>
       <div className='header__wrapper'>
         {/* Logo */}
         <div className='header__logo'>
@@ -29,7 +43,7 @@ function Header() {
         </div>
         {/* Overlay when clicking on the nav list will display for mobile */}
         {!isMenuOpen && <div className='js-header--mobile-overlay' onClick={toggleMenu}></div>}
-        <div className={`header__nav ${isMenuOpen ? 'header__nav--open' : ''}`}>
+        <div className={`header__nav ${isMenuOpen && 'header__nav--open'}`}>
           {/* Used to close the nav list for mobile. */}
           <div className='js-header--mobile-close header__nav--mobile-icon' onClick={toggleMenu}>
             <CgClose />

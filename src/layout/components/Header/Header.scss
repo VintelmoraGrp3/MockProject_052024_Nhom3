@@ -15,6 +15,12 @@
   padding-right: var(--screen-spacer);
   padding-left: var(--screen-spacer);
   z-index: 1000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  // Scroll
+  &--scrolled {
+    background-color: #302f2f;
+  }
 
   &__wrapper {
     display: flex;
