@@ -31,6 +31,12 @@
     margin-left: 8px;
   }
 
+  &--icon {
+    display: inline-flex;
+    font-size: inherit;
+    align-items: center;
+  }
+
   // Button types
   &--rounded {
     border-radius: 9999px;
@@ -59,8 +65,8 @@
   // Button sizes
   &--small {
     min-width: 100px;
-    // padding: 8px 42px;
-    font-size: 2.2rem;
+    padding: 9px 42px;
+    font-size: 1.8rem;
     font-weight: 400;
   }
 
@@ -72,55 +78,108 @@
     padding: 14px 0px;
     min-width: 120px;
 
+    &--icon + &--title,
+    &--title + &--icon {
+      margin-left: 10px;
+    }
+
     // Button sizes
     &--small {
       padding: 4px 18px;
-      font-size: 2.4rem;
+      font-size: 2rem;
     }
   }
 
   @media screen and (min-width: 768px) {
     min-width: 150px;
+
+    &--icon + &--title,
+    &--title + &--icon {
+      margin-left: 12px;
+    }
   }
 
   @media screen and (min-width: 1024px) {
     font-size: 3.6rem;
     min-width: 200px;
 
+    &--icon + &--title,
+    &--title + &--icon {
+      margin-left: 14px;
+    }
+
     &--small {
-      font-size: 2.8rem;
+      font-size: 2.2rem;
     }
   }
 
   @media screen and (min-width: 1280px) {
     font-size: 4rem;
     padding: 14px 62px;
-    min-width: 243px;
+
+    &--icon + &--title,
+    &--title + &--icon {
+      margin-left: 16px;
+    }
 
     // Button sizes
     &--small {
       padding: 8px 42px;
-      font-size: 3rem;
+      font-size: 2.4rem;
     }
   }
 
   @media screen and (min-width: 1536px) {
     font-size: 4.2rem;
 
+    &--icon + &--title,
+    &--title + &--icon {
+      margin-left: 18px;
+    }
+
     &--small {
-      font-size: 3.2rem;
+      font-size: 2.6rem;
     }
   }
 
   @media screen and (min-width: 1600px) {
     font-size: 4.4rem;
+
+    &--icon + &--title,
+    &--title + &--icon {
+      margin-left: 20px;
+    }
+
+    &--small {
+      font-size: 2.8rem;
+    }
   }
 
   @media screen and (min-width: 1680px) {
-    font-size: 4.4rem;
+    font-size: 4.6rem;
+
+    &--icon + &--title,
+    &--title + &--icon {
+      margin-left: 22px;
+    }
+
+    &--small {
+      font-size: 3rem;
+    }
   }
 
   @media screen and (min-width: 1920px) {
     font-size: 4.8rem;
+
+    &--icon + &--title,
+    &--title + &--icon {
+      margin-left: 24px;
+    }
+
+    // Button sizes
+    &--small {
+      padding: 12px 42px;
+      font-size: 3.2rem;
+    }
   }
 }

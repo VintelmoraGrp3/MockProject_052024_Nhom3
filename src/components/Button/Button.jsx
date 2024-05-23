@@ -42,7 +42,7 @@ function Button({
 
   // Class types
   if (className) {
-    classes += className;
+    classes += className + ' ';
   }
 
   if (primary) {
@@ -81,7 +81,7 @@ function Button({
   }
 
   return (
-    <Comp className={`btn ${classes}`} {...props}>
+    <Comp className={`btn ${classes + ''}`} {...props}>
       {leftIcon && <span className='btn--icon'>{leftIcon}</span>}
       <span className='btn--title'>{children}</span>
       {rightIcon && <span className='btn--icon'>{rightIcon}</span>}
