@@ -1,11 +1,20 @@
 import Agent from '../pages/Agent';
 import Sell from '../pages/Sell';
 import SellRegister from '../pages/SellRegister';
+import SellLayout from '../layout/SellLayout';
 
 // Public routes
 const publicRoutes = [
   { path: '/agent', component: Agent },
-  { path: '/sell', component: Sell, customBanner: true, children: [{ path: 'register', component: SellRegister }] },
+  {
+    path: '/sell',
+    component: SellLayout,
+    customBanner: true,
+    children: [
+      { path: '', component: Sell },
+      { path: 'register', component: SellRegister },
+    ],
+  },
 ];
 
 // Private routes
