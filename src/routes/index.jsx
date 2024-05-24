@@ -1,7 +1,7 @@
 import Agent from '../pages/Agent';
 import Sell from '../pages/Sell';
 import SellRegister from '../pages/SellRegister';
-import SellLayout from '../layout/SellLayout';
+import { SellLayout } from '../layout';
 
 // Public routes
 const publicRoutes = [

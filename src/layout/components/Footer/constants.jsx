@@ -3,9 +3,10 @@ import { MdOutlineEmail } from 'react-icons/md';
 import { IoHomeOutline } from 'react-icons/io5';
 
 const CONTACTS = [
-  { icon: <FiPhone />, title: '+84xxxxxxxxxx' },
-  { icon: <MdOutlineEmail />, title: 'tempura@gmail.com' },
+  { key: 'footer-phone', icon: <FiPhone />, title: '+84xxxxxxxxxx' },
+  { key: 'footer-gmail', icon: <MdOutlineEmail />, title: 'tempura@gmail.com' },
   {
+    key: 'footer-address',
     icon: <IoHomeOutline />,
     address: {
       street: { number: '230/5', name: ' Chau Thi Vinh Te' },

@@ -13,7 +13,7 @@ function MenuList({ data = [], textLeft = false, textRight = false }) {
   return (
     <ul className='menu--list'>
       {data.map((item) => (
-        <Button small leftIcon={item.icon} className={`menu--item ${classes}`}>
+        <Button key={item.key} small leftIcon={item.icon} className={`menu--item ${classes}`}>
           {item.title ?? (
             <>
               <span className='menu--item--street'>
