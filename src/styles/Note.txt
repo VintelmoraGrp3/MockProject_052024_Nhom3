@@ -1,1 +1,0 @@
-Thư mục chứa các tệp tin SCSS cho ứng dụng
