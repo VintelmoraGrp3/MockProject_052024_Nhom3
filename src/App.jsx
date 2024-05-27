@@ -21,10 +21,12 @@ class App extends React.Component {
     return (
       <>
         <Router>
+          {/* header render for all module route */}
           <header>
             <Header />
           </header>
 
+          {/* switch route */}
           <Switch>
             <Route path="/" exact>
               <Home />
@@ -40,6 +42,7 @@ class App extends React.Component {
             </Route>
           </Switch>
 
+          {/* footer render for all module route */}
           <footer>
             <Footer />
           </footer>
