@@ -8,8 +8,8 @@ import {
 
 import "./App.scss";
 
-import Header from "./routes/Header/Header";
-import Footer from "./routes/Footer/footer";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/footer";
 
 import Home from "./pages/Home";
 import History from "./pages/historyTrans/HistoryTrans";
