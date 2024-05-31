@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setRole } from "../redux/actions/authActions";
 import CustomerLoginForm from "../components/CustomerLoginForm";
 import AgentLoginForm from "../components/AgentLoginForm";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../styles/login.scss";
 
 // LoginPage component for handling user login
@@ -28,10 +30,12 @@ const LoginPage = () => {
 
   return (
     <>
+      <Header />
+
       <div className="container-xl">
         {/* Title */}
         <h1 className="fw-bold ms-3 mt-3">Sign in</h1>
-        <div className="login">
+        <div className="login mb-4">
           <div className="login-container">
             {/* Role switch buttons */}
             <div className="role-switch m-3 d-flex text-center text-md-start">
@@ -59,6 +63,8 @@ const LoginPage = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

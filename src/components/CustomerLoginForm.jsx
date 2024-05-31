@@ -1,7 +1,7 @@
 import React from "react";
 import PasswordInput from "./PasswordInput";
 import { ListSocial } from "./ListSocial";
-import { NavLink } from "react-bootstrap";
+import { NavLink } from "react-router-dom";
 
 // CustomerLoginForm component for handling customer login
 const CustomerLoginForm = ({ handleLogin }) => {
@@ -50,7 +50,7 @@ const CustomerLoginForm = ({ handleLogin }) => {
         </div>
         {/* Link to the registration page */}
         <div className="form-link-signup mt-5">
-          <NavLink href="/register">Create a free HAR account?</NavLink>
+          <NavLink to="/register">Create a free HAR account?</NavLink>
         </div>
       </form>
 

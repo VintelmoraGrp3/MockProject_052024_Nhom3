@@ -1,11 +1,16 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { ListSocial } from "../components/ListSocial";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 import "../styles/register.scss";
 
 // RegisterPage component for user registration
 const RegisterPage = () => {
   return (
     <>
+      <Header />
+
       <div className="container">
         {/* Title */}
         <h1 className="fw-bold mt-3">Sign up</h1>
@@ -65,7 +70,7 @@ const RegisterPage = () => {
             </div>
             {/* Confirm Password */}
             <div className="col-12 col-md-4">
-              <label htmlFor="confirm-password">Confirm Password</label>
+              <label htmlFor="confirmPassword">Confirm Password</label>
               <input
                 type="password"
                 className="form-control"
@@ -84,7 +89,7 @@ const RegisterPage = () => {
           {/* First and Last Name inputs */}
           <div className="form-group d-md-flex mb-3">
             <div className="col-12 col-md-4 me-3">
-              <label htmlFor="first-name">First Name</label>
+              <label htmlFor="firstName">First Name</label>
               <input
                 className="form-control"
                 id="firstName"
@@ -93,7 +98,7 @@ const RegisterPage = () => {
               />
             </div>
             <div className="col-12 col-md-4">
-              <label htmlFor="last-name">Last Name</label>
+              <label htmlFor="lastName">Last Name</label>
               <input
                 className="form-control"
                 id="lastName"
@@ -104,7 +109,7 @@ const RegisterPage = () => {
           </div>
           {/* Zip Code input */}
           <div className="form-group mb-3">
-            <label htmlFor="zip-code">Zip Code you're interested in</label>
+            <label htmlFor="zipCode">Zip Code you're interested in</label>
             <input
               className="form-control"
               id="zipCode"
@@ -154,11 +159,14 @@ const RegisterPage = () => {
           {/* Already have an account */}
           <div className="border-top my-4">
             <p className="mt-1">
-              If you already have an account, <a href="/login">Sign in</a> now!
+              If you already have an account,{" "}
+              <NavLink to="/login">Sign in</NavLink> now!
             </p>
           </div>
         </form>
       </div>
+
+      <Footer />
     </>
   );
 };

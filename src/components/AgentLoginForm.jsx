@@ -84,7 +84,7 @@ const AgentLoginForm = ({ handleLogin }) => {
             Sign In
           </button>
           {/* Forgot username/password links */}
-          <div className="form-forgot mt-4 me-5">
+          <div className="form-forgot mt-4">
             <p>Forgot something?</p>
             <div>
               <a href="#" className="form-forgot-username me-3">
