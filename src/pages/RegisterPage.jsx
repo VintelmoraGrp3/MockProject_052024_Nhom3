@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import { ListSocial } from "../components/ListSocial";
 import Header from "../components/Header";
@@ -7,15 +7,38 @@ import "../styles/register.scss";
 
 // RegisterPage component for user registration
 const RegisterPage = () => {
+  const [termChecked, setTermChecked] = useState(false);
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleChecked = (e) => {
+    setTermChecked(e.target.checked);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleConfirmPassword = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password !== confirmPassword) {
+      setErrorMessage("Password do not mactch");
+    } else {
+      setErrorMessage("");
+    }
+  };
   return (
     <>
       <Header />
 
-      <div className="container">
+      <div className="container-xl">
         {/* Title */}
         <h1 className="fw-bold mt-3">Sign up</h1>
         {/* Registration form */}
-        <form className="register">
+        <form className="register" onSubmit={handleSubmit}>
           {/* Social account signup */}
           <p>You can sign up using your social account</p>
           <ListSocial /> {/* Rendering ListSocial component */}
@@ -26,21 +49,13 @@ const RegisterPage = () => {
               {/* Agent role checkbox */}
               <div className="d-flex">
                 <p>Agent</p>
-                <input
-                  type="checkbox"
-                  name="keepLoggedIn"
-                  className="checkbox-role"
-                />
+                <input type="radio" name="role" className="checkbox-role" />
               </div>
               {/* Customer role checkbox */}
               <p>OR</p>
               <div className="d-flex">
                 <p>Customer</p>
-                <input
-                  type="checkbox"
-                  name="keepLoggedIn"
-                  className="checkbox-role"
-                />
+                <input type="radio" name="role" className="checkbox-role" />
               </div>
             </div>
           </div>
@@ -65,6 +80,8 @@ const RegisterPage = () => {
                 className="form-control"
                 id="password"
                 name="password"
+                value={password}
+                onChange={handlePassword}
                 required
               />
             </div>
@@ -76,11 +93,14 @@ const RegisterPage = () => {
                 className="form-control"
                 id="confirmPassword"
                 name="confirmPassword"
+                value={confirmPassword}
+                onChange={handleConfirmPassword}
                 required
               />
             </div>
           </div>
           {/* Password requirements */}
+          {errorMessage && <p className="text-danger">{errorMessage}</p>}
           <p className="mb-3">
             <span className="fw-bold">Password requirement:</span> should
             contain at least 1 uppercase letter, lowercase letter, 1 number, 1
@@ -112,6 +132,7 @@ const RegisterPage = () => {
             <label htmlFor="zipCode">Zip Code you're interested in</label>
             <input
               className="form-control"
+              pattern="\d*"
               id="zipCode"
               name="zipCode"
               required
@@ -121,21 +142,31 @@ const RegisterPage = () => {
           {/* Phone input */}
           <div className="form-group mb-3">
             <label htmlFor="phone">Send to your phone</label>
-            <input className="form-control" id="phone" name="phone" required />
+            <input
+              className="form-control"
+              pattern="\d*"
+              id="phone"
+              name="phone"
+              required
+            />
           </div>
           {/* Keep signed in checkbox */}
           <div className="form-group form-options d-flex justify-content-between align-items-center mb-3">
             <label className="form-checkbox d-flex align-items-center">
-              <input type="checkbox" name="keepLoggedIn" />
+              <input
+                type="checkbox"
+                name="termCheck"
+                onChange={handleChecked}
+              />
               <p className="ms-1">
-                Keep me signed in <a href="#">Term Of Use</a>
+                I accept <a href="#">Term Of Use</a>
               </p>
             </label>
           </div>
           {/* Subscribe to Realinsight checkbox */}
           <div className="form-group form-options d-flex justify-content-between align-items-center mb-3">
             <label className="form-checkbox d-flex align-items-center">
-              <input type="checkbox" name="keepLoggedIn" />
+              <input type="checkbox" name="checkSub" />
               <p className="ms-1">
                 Subscribe to <a href="#">Realinsight</a>
               </p>
@@ -152,7 +183,7 @@ const RegisterPage = () => {
           </div>
           {/* Create Account button */}
           <div className="form-group mb-3">
-            <button type="submit" className="btn">
+            <button type="submit" className="btn" disabled={!termChecked}>
               Create Account
             </button>
           </div>
